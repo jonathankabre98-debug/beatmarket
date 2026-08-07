@@ -26,7 +26,6 @@ Thumbs.db
 
 # Vercel
 .vercel/
-.vercel.json.local
 
 # Logs
 logs/
