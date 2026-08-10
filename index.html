@@ -1050,30 +1050,33 @@ function App(){
 
       {/* TOP BAR PREMIUM */}
       {tab==="feed"&&<div style={{position:"absolute",top:0,left:0,right:0,zIndex:100,pointerEvents:"none"}}>
-        {/* Badge @username centré tout en haut */}
-        <div style={{display:"flex",justifyContent:"center",paddingTop:10,pointerEvents:"auto"}}>
-          <div style={{background:"rgba(0,0,0,0.5)",backdropFilter:"blur(14px)",border:"1px solid rgba(255,255,255,0.1)",borderRadius:999,padding:"4px 16px"}}>
-            <span style={{color:"rgba(255,255,255,0.8)",fontSize:11,fontWeight:500,letterSpacing:"0.12em"}}>@BEATMARKET.ORIGINAL</span>
-          </div>
-        </div>
-        {/* Header : BeatMarket | Coins (centré) | Explore + icônes */}
-        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"8px 18px 0",pointerEvents:"auto",position:"relative"}}>
-          <span style={{color:"white",fontSize:29,fontWeight:800,letterSpacing:-0.5,lineHeight:1}}>BeatMarket</span>
-          <div style={{position:"absolute",left:"50%",transform:"translateX(-50%)",pointerEvents:"auto"}}>
-            <div style={{display:"flex",alignItems:"center",gap:8,padding:"8px 16px",borderRadius:999,border:"1px solid rgba(253,224,71,0.2)",background:"linear-gradient(90deg,#2B1700,#8A5A00,#D4A017)",boxShadow:"0 0 26px rgba(250,204,21,0.42)",backdropFilter:"blur(12px)",minWidth:128,justifyContent:"center",height:52}}>
-              <div style={{width:24,height:24,borderRadius:"50%",background:"#FDE047",flexShrink:0}}/>
-              <div style={{display:"flex",flexDirection:"column",alignItems:"center",lineHeight:1}}>
-                <span style={{color:"#FEFCE8",fontSize:20,fontWeight:700}}>{fmtN(tokens.earned)}</span>
-                <span style={{color:"rgba(254,252,232,0.8)",fontSize:9,textTransform:"uppercase",letterSpacing:"0.1em"}}>COUPS</span>
-              </div>
+        {/* Header principal EN HAUT */}
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"52px 24px 0",pointerEvents:"auto"}}>
+          {/* Logo BeatMarket */}
+          <span style={{color:"white",fontSize:28,fontWeight:900,letterSpacing:-0.5,lineHeight:1}}>BeatMarket</span>
+          {/* Badge pièces */}
+          <div style={{display:"flex",alignItems:"center",gap:6,background:"linear-gradient(135deg,#8B6000,#F4C542)",border:"1.5px solid #F4C54288",borderRadius:24,padding:"8px 14px",boxShadow:"0 0 16px rgba(244,197,66,0.35)",flexShrink:0,pointerEvents:"auto"}}>
+            <div style={{width:24,height:24,borderRadius:"50%",background:"radial-gradient(circle at 35% 35%,#FFE97A,#F4A800)",boxShadow:"0 0 8px #F4C54288",flexShrink:0}}/>
+            <div style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
+              <span style={{color:"#FFE066",fontSize:18,fontWeight:900,lineHeight:1}}>{fmtN(tokens.earned)}</span>
+              <span style={{color:"#F4D888",fontSize:9,fontWeight:800,letterSpacing:1}}>COUPS</span>
             </div>
           </div>
-          <div style={{display:"flex",alignItems:"center",gap:14,pointerEvents:"auto"}}>
+          {/* Explore + icônes */}
+          <div style={{display:"flex",alignItems:"center",gap:18,pointerEvents:"auto"}}>
             <span style={{color:"white",fontSize:24,fontWeight:600}}>Explore</span>
-            <button onClick={()=>setShowSearch(true)} style={{width:42,height:42,borderRadius:"50%",background:"rgba(0,0,0,0.35)",border:"1px solid rgba(255,255,255,0.1)",backdropFilter:"blur(12px)",display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer"}}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <button onClick={()=>setShowSearch(true)} style={{background:"none",border:"none",cursor:"pointer",padding:4}}>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </button>
-            <button style={{width:42,height:42,borderRadius:"50%",background:"rgba(0,0,0,0.35)",border:"1px solid rgba(255,255,255,0.1)",backdropFilter:"blur(12px)",display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer",fontSize:18}}>💬</button>
+            <button style={{background:"none",border:"none",cursor:"pointer",padding:4}}>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </button>
+          </div>
+        </div>
+        {/* Badge @BEATMARKET.ORIGINAL EN DESSOUS */}
+        <div style={{display:"flex",justifyContent:"center",marginTop:10,pointerEvents:"auto"}}>
+          <div style={{background:"rgba(0,0,0,0.55)",backdropFilter:"blur(14px)",border:"1px solid rgba(255,255,255,0.12)",borderRadius:20,padding:"7px 20px"}}>
+            <span style={{color:"rgba(255,255,255,0.7)",fontSize:12,fontWeight:600,letterSpacing:0.5}}>@BEATMARKET.ORIGINAL</span>
           </div>
         </div>
       </div>}
@@ -1089,8 +1092,8 @@ function App(){
         {tab==="profil"&&<div style={{height:"100%",display:"flex",flexDirection:"column",paddingTop:4}}>{account?<ProfileTab favs={favs} commentsMap={cmap} ct={ct} premium={premium} premiumUntil={premiumUntil} onShowSettings={()=>setShowSettings(true)} profile={profile} tokens={tokens} joinDate={joinDate} T={T} onWantPremium={()=>setShowPremium(true)} account={account} activity={activity}/>:<ProfileLocked onSignup={()=>requireAuth("profile")} ct={ct} T={T}/>}</div>}
       </div>
 
-      <div style={{height:84,borderTop:"1px solid rgba(255,255,255,0.1)",background:"rgba(0,0,0,0.8)",backdropFilter:"blur(24px)",display:"grid",gridTemplateColumns:"repeat(5,1fr)",paddingBottom:"env(safe-area-inset-bottom,0px)"}}>
-        {NAV.map(n=>{const a=tab===n.id;return <button key={n.id} onClick={()=>setTab(n.id)} style={{background:"none",border:"none",cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:4,position:"relative"}}>{a&&<div style={{position:"absolute",top:0,left:"50%",transform:"translateX(-50%)",width:4,height:20,borderRadius:999,background:"#A855F7",boxShadow:"0 0 12px rgba(168,85,247,0.9)"}}/>}{n.icon(a)}<span style={{fontSize:11,fontWeight:a?700:400,letterSpacing:"0.06em",color:a?"#A855F7":"rgba(255,255,255,0.55)",textTransform:"uppercase"}}>{n.lbl}</span></button>;})}
+      <div style={{display:"flex",background:"rgba(5,5,5,0.92)",borderTop:"1px solid rgba(255,255,255,0.06)",backdropFilter:"blur(26px)",height:124,paddingBottom:"env(safe-area-inset-bottom,0px)"}}>
+        {NAV.map(n=>{const a=tab===n.id;return <button key={n.id} onClick={()=>setTab(n.id)} style={{flex:1,background:"none",border:"none",cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:6,position:"relative"}}>{n.icon(a)}<span style={{fontSize:18,fontWeight:800,letterSpacing:0.8,color:a?"#8B5CFF":"rgba(255,255,255,0.3)"}}>{n.lbl}</span>{a&&<div style={{position:"absolute",top:0,left:"50%",transform:"translateX(-50%)",width:48,height:4,borderRadius:2,background:"#8B5CFF",boxShadow:"0 0 12px #8B5CFF",animation:"feedBarPulse 2s ease-in-out infinite"}}/>}</button>;})}
       </div>
     </div>
   );
