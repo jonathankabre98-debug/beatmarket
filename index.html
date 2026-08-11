@@ -884,17 +884,17 @@ function App(){
 <div style={{position:"absolute",top:0,left:0,right:0,zIndex:100,display:"flex",flexDirection:"column",alignItems:"center",padding:"44px 14px 14px",background:"linear-gradient(to bottom,rgba(0,0,0,0.55),transparent)",pointerEvents:"none"}}>
   <span style={{color:"rgba(255,255,255,0.55)",fontSize:11,fontWeight:700,letterSpacing:0.8,marginBottom:10,pointerEvents:"auto"}}>@BEATMARKET.ORIGINAL</span>
   <div style={{position:"relative",width:"100%",height:34}}>
-    <div style={{position:"absolute",left:0,top:0,display:"flex",alignItems:"center",gap:6,pointerEvents:"auto"}}>
-      <div style={{width:32,height:32,borderRadius:10,background:`linear-gradient(135deg,${ct.accent},${ct.accent2})`,display:"flex",alignItems:"center",justifyContent:"center",boxShadow:`0 0 14px ${ct.glow}`}}>
+    <div style={{position:"absolute",left:0,top:"50%",transform:"translateY(-50%)",display:"flex",alignItems:"center",gap:6,pointerEvents:"auto"}}>
+    <div style={{width:32,height:32,borderRadius:10,background:`linear-gradient(135deg,${ct.accent},${ct.accent2})`,display:"flex",alignItems:"center",justifyContent:"center",boxShadow:`0 0 14px ${ct.glow}`}}>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 18V5l12-2v13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><circle cx="6" cy="18" r="3" fill="white"/><circle cx="18" cy="16" r="3" fill="white"/></svg>
       </div>
       <span style={{color:"white",fontSize:17,fontWeight:900,letterSpacing:-0.5}}>{T.appName}</span>
     </div>
-    <div style={{position:"absolute",left:"50%",top:0,transform:"translateX(-50%)",display:"flex",alignItems:"center",gap:5,background:"rgba(255,184,0,0.14)",border:"1px solid rgba(255,184,0,0.35)",borderRadius:18,padding:"6px 12px 6px 9px",pointerEvents:"auto"}}>
-      <span style={{fontSize:14}}>🪙</span><span style={{color:"#FFD700",fontSize:12.5,fontWeight:800}}>{fmtN(tokens.earned)}</span>
+    <div style={{position:"absolute",left:"50%",top:"50%",transform:"translate(-50%,-50%)",display:"flex",alignItems:"center",gap:5,background:"rgba(255,184,0,0.14)",border:"1px solid rgba(255,184,0,0.35)",borderRadius:18,padding:"6px 12px 6px 9px",pointerEvents:"auto"}}>
+    <span style={{fontSize:14}}>🪙</span><span style={{color:"#FFD700",fontSize:12.5,fontWeight:800}}>{fmtN(tokens.earned)}</span>
     </div>
-    <div style={{position:"absolute",right:0,top:0,display:"flex",alignItems:"center",gap:14,pointerEvents:"auto"}}>
-      <span style={{color:"white",fontSize:14,fontWeight:700}}>Explore</span>
+    <div style={{position:"absolute",right:0,top:"50%",transform:"translateY(-50%)",display:"flex",alignItems:"center",gap:14,pointerEvents:"auto"}}>  
+    <span style={{color:"white",fontSize:14,fontWeight:700}}>Explore</span>
       <button onClick={()=>setShowSearch(true)} style={{width:36,height:36,borderRadius:"50%",background:"rgba(255,255,255,0.1)",backdropFilter:"blur(10px)",border:"1px solid rgba(255,255,255,0.15)",display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer"}}>
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </button>
